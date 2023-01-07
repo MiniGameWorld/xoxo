@@ -1,4 +1,4 @@
-<h1 align='center'>Let's play XOXO</h1>
+<h1 align='center'>xoxo</h1>
 
 Live project link: https://balayokesh.github.io/xoxo/
 
