@@ -1,26 +1,26 @@
 import { useState } from 'react';
 
-import { makeStyles, Container, Button, Collapse } from '@material-ui/core';
+import { makeStyles, Container, Button } from '@material-ui/core';
 import Alert from '@mui/material/Alert';
 
 const useStyles = makeStyles({
     parent: {
         display: "flex",
-		flexDirection: "column",
-		height: "100vh",
-		justifyContent: "space-around",
-		alignItems: "center",
+        flexDirection: "column",
+        height: "100vh",
+        justifyContent: "space-around",
+        alignItems: "center",
         background: "radial-gradient(purple, black)"
     },
-	container: {
-		display: "flex",
-		flexDirection: "column",
-		height: "85%",
+    container: {
+        display: "flex",
+        flexDirection: "column",
+        height: "85%",
         width: "75%",
-		justifyContent: "space-around",
-		alignItems: "center",
+        justifyContent: "space-around",
+        alignItems: "center",
         background: "lightgrey"
-	},
+    },
     border: {
         border: "1px solid black",
         borderCollapse: "collapse"
@@ -50,8 +50,8 @@ const App = () => {
         else {
             return;
         }
-        
-        if (checkForWinning() === false )
+
+        if (checkForWinning() === false)
             setCount(count + 1);
     }
 
@@ -78,7 +78,7 @@ const App = () => {
             reset();
             return true;
         }
-        else if (a00 !== '_'&& a01 !== '_'&& a02 !== '_'&& a10 !== '_'&& a11 !== '_'&& a12 !== '_'&& a20 !== '_'&& a21 !== '_'&& a22 !== '_') {
+        else if (a00 !== '_' && a01 !== '_' && a02 !== '_' && a10 !== '_' && a11 !== '_' && a12 !== '_' && a20 !== '_' && a21 !== '_' && a22 !== '_') {
             alert("Draw");
             setCount(1);
             reset();
@@ -115,7 +115,7 @@ const App = () => {
                         <td id='a10' onClick={handleClick} className={classes.box}>_</td>
                         <td id='a20' onClick={handleClick} className={classes.box}>_</td>
                     </tr>
-                    
+
                     <tr className={classes.border}>
                         <td id='a01' onClick={handleClick} className={classes.box}>_</td>
                         <td id='a11' onClick={handleClick} className={classes.box}>_</td>
@@ -129,10 +129,17 @@ const App = () => {
                     </tr>
                 </table>
 
-                <Button variant='contained' color='primary' onClick={reset}>
-                    Reset
-                </Button>
+                <div>
+                    <Button variant='contained' color='secondary' onClick={()=>window.location.href='../'} title='Back to Mini Game World'>
+                        Home
+                    </Button>
+                    &nbsp;
+                    <Button variant='contained' color='primary' onClick={reset}>
+                        Reset
+                    </Button>
+                </div>
             </Container>
+
         </div>
     )
 }
